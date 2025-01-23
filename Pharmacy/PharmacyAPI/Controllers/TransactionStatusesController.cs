@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
+using PharmacyAPI.Models.DTOs;
 
 namespace PharmacyAPI.Controllers
 {
@@ -9,17 +11,20 @@ namespace PharmacyAPI.Controllers
     public class TransactionStatusesController : ControllerBase
     {
         private readonly PharmacyDbContext dbContext;
+        private readonly IMapper mapper;
 
-        public TransactionStatusesController(PharmacyDbContext dbContext)
+        public TransactionStatusesController(PharmacyDbContext dbContext,IMapper mapper)
         {
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
             var transactionStatuses = dbContext.TransactionStatuses.ToList();
-            return Ok(transactionStatuses);
+            var transactionStatusesDto = mapper.Map<List<TransactionStatusDto>>(transactionStatuses);
+            return Ok(transactionStatusesDto);
         }
 
         [HttpGet]
@@ -31,7 +36,8 @@ namespace PharmacyAPI.Controllers
             {
                 return NotFound();
             }
-            return Ok(transactionStatus);
+            var transactionStatusDto = mapper.Map<TransactionStatusDto>(transactionStatus);
+            return Ok(transactionStatusDto);
         }
     }
 }

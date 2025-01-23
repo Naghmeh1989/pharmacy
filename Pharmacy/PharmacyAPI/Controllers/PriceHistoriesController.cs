@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Azure;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
+using PharmacyAPI.Models.DTOs;
 
 namespace PharmacyAPI.Controllers
 {
@@ -9,17 +12,20 @@ namespace PharmacyAPI.Controllers
     public class PriceHistoriesController : ControllerBase
     {
         private readonly PharmacyDbContext dbContext;
+        private readonly IMapper mapper;
 
-        public PriceHistoriesController(PharmacyDbContext dbContext)
+        public PriceHistoriesController(PharmacyDbContext dbContext,IMapper mapper)
         {
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
             var priceHistories = dbContext.PriceHistories.ToList();
-            return Ok(priceHistories);
+            var priceHistoriesDto = mapper.Map<List<PriceHistoryDto>>(priceHistories);
+            return Ok(priceHistoriesDto);
         }
 
         [HttpGet]
@@ -31,7 +37,8 @@ namespace PharmacyAPI.Controllers
             {
                 return NotFound();
             }
-            return Ok(priceHistory);
+            var priceHistoryDto = mapper.Map<PriceHistoryDto>(priceHistory);
+            return Ok(priceHistoryDto);
         }
     }
 }

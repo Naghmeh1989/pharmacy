@@ -25,7 +25,7 @@ public partial class PharmacyDbContext : DbContext
 
     public virtual DbSet<Order> Orders { get; set; }
 
-    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+    public virtual DbSet<OrderDetails> OrderDetails { get; set; }
 
     public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
 
@@ -210,7 +210,7 @@ public partial class PharmacyDbContext : DbContext
                 .HasConstraintName("FK_orders_orderStatus");
         });
 
-        modelBuilder.Entity<OrderDetail>(entity =>
+        modelBuilder.Entity<OrderDetails>(entity =>
         {
             entity.ToTable("orderDetails");
 

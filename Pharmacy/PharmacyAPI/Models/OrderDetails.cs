@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PharmacyAPI.Models;
 
-public partial class OrderDetail
+public partial class OrderDetails
 {
     public int Id { get; set; }
 

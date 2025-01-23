@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Azure;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
+using PharmacyAPI.Models.DTOs;
 
 namespace PharmacyAPI.Controllers
 {
@@ -9,17 +12,20 @@ namespace PharmacyAPI.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly PharmacyDbContext dbContext;
+        private readonly IMapper mapper;
 
-        public OrdersController(PharmacyDbContext dbContext)
+        public OrdersController(PharmacyDbContext dbContext,IMapper mapper)
         {
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult GetAll() 
         { 
             var orders = dbContext.Orders.ToList();
-            return Ok(orders);
+            var ordersDto = mapper.Map<List<OrderDto>>(orders);
+            return Ok(ordersDto);
         }
 
         [HttpGet]
@@ -31,7 +37,8 @@ namespace PharmacyAPI.Controllers
             {
                 return NotFound();
             }
-            return Ok(order);
+            var orderDto = mapper.Map<OrderDto>(order);
+            return Ok(orderDto);
         }
 
     }

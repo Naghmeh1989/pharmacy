@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
+using PharmacyAPI.Models.DTOs;
+using System.Transactions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace PharmacyAPI.Controllers
 {
@@ -9,17 +13,20 @@ namespace PharmacyAPI.Controllers
     public class TagsController : ControllerBase
     {
         private readonly PharmacyDbContext dbContext;
+        private readonly IMapper mapper;
 
-        public TagsController(PharmacyDbContext dbContext)
+        public TagsController(PharmacyDbContext dbContext,IMapper mapper)
         {
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
             var tags = dbContext.Tags.ToList();
-            return Ok(tags);
+            var tagsDto = mapper.Map<List<TagDto>>(tags);
+            return Ok(tagsDto);
         }
 
         [HttpGet]
@@ -31,7 +38,8 @@ namespace PharmacyAPI.Controllers
             {
                 return NotFound();
             }
-            return Ok(tag);
+            var tagDto = mapper.Map<TagDto>(tag);
+            return Ok(tagDto);
         }
     }
 }
