@@ -14,5 +14,25 @@ namespace PharmacyAPI.Controllers
         {
             this.dbContext = dbContext;
         }
+
+        [HttpGet]
+        public IActionResult GetAll() 
+        { 
+            var orders = dbContext.Orders.ToList();
+            return Ok(orders);
+        }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public IActionResult GetById(int id)
+        { 
+            var order = dbContext.Orders.Find(id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return Ok(order);
+        }
+
     }
 }

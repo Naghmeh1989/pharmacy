@@ -170,3 +170,4 @@ C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\refint\Phar
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\PharmacyAPI.pdb
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\PharmacyAPI.genruntimeconfig.cache
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\ref\PharmacyAPI.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\PharmacyAPI.sourcelink.json

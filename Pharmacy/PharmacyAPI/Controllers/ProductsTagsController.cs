@@ -14,5 +14,14 @@ namespace PharmacyAPI.Controllers
         {
             this.dbContext = dbContext;
         }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var productsTags = dbContext.ProductsTags.ToList();
+            return Ok(productsTags);
+        }
+
+        
     }
 }
