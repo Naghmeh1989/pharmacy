@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
 using PharmacyAPI.Models.DTOs;
+using PharmacyAPI.Repositories;
 using System.Transactions;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -14,17 +15,19 @@ namespace PharmacyAPI.Controllers
     {
         private readonly PharmacyDbContext dbContext;
         private readonly IMapper mapper;
+        private readonly ITagRepository tagRepository;
 
-        public TagsController(PharmacyDbContext dbContext,IMapper mapper)
+        public TagsController(PharmacyDbContext dbContext,IMapper mapper,ITagRepository tagRepository)
         {
             this.dbContext = dbContext;
             this.mapper = mapper;
+            this.tagRepository = tagRepository;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var tags = dbContext.Tags.ToList();
+            var tags = tagRepository.GetAll();
             var tagsDto = mapper.Map<List<TagDto>>(tags);
             return Ok(tagsDto);
         }

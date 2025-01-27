@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
 using PharmacyAPI.Models.DTOs;
+using PharmacyAPI.Repositories;
 
 namespace PharmacyAPI.Controllers
 {
@@ -13,17 +14,19 @@ namespace PharmacyAPI.Controllers
     {
         private readonly PharmacyDbContext dbContext;
         private readonly IMapper mapper;
+        private readonly ICategoryRepository categoryRepository;
 
-        public CategoriesController(PharmacyDbContext dbContext,IMapper mapper)
+        public CategoriesController(PharmacyDbContext dbContext,IMapper mapper,ICategoryRepository categoryRepository)
         {
             this.dbContext = dbContext;
             this.mapper = mapper;
+            this.categoryRepository = categoryRepository;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         { 
-            var categories = dbContext.Categories.ToList();
+            var categories = categoryRepository.GetAll();
             var categoriesDto = mapper.Map<List<CategoryDto>>(categories);
             return Ok(categoriesDto);
         }

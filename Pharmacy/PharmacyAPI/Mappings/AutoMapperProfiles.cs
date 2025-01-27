@@ -15,6 +15,8 @@ namespace PharmacyAPI.Mapping
             CreateMap<TagDto, Tag>().ReverseMap();
             CreateMap<ProductTagDto, ProductsTag>().ReverseMap();
             CreateMap<ProductDto, Product>().ReverseMap();
+            CreateMap<AddProductDto, Product>().ReverseMap();
+            CreateMap<UpdateProductDto, Product>().ReverseMap();
             CreateMap<PriceHistoryDto, PriceHistory>().ReverseMap();
             CreateMap<PaymentStatusDto, PaymentStatus>().ReverseMap();
             CreateMap<PaymentDto, Payment>().ReverseMap();

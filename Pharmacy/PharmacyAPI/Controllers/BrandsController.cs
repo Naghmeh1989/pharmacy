@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
 using PharmacyAPI.Models.DTOs;
+using PharmacyAPI.Repositories;
 
 namespace PharmacyAPI.Controllers
 {
@@ -13,17 +14,19 @@ namespace PharmacyAPI.Controllers
     {
         private readonly PharmacyDbContext dbContext;
         private readonly IMapper mapper;
+        private readonly IBrandRepository brandRepository;
 
-        public BrandsController(PharmacyDbContext dbContext,IMapper mapper)
+        public BrandsController(PharmacyDbContext dbContext,IMapper mapper,IBrandRepository brandRepository)
         {
             this.dbContext = dbContext;
             this.mapper = mapper;
+            this.brandRepository = brandRepository;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var brands = dbContext.Brands.ToList();
+            var brands = brandRepository.GetAll();
             var brandsDto = mapper.Map<List<BrandDto>>(brands);
             return Ok(brandsDto);
         }
