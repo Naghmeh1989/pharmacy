@@ -1,9 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using PharmacyAPI.Mapping;
+using PharmacyAPI.Middlewares;
 using PharmacyAPI.Models;
 using PharmacyAPI.Repositories;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+var logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/Pharmacy_Log.txt",rollingInterval:RollingInterval.Minute)
+    .MinimumLevel.Warning()
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 // Add services to the container.
 
@@ -38,6 +47,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 

@@ -15,68 +15,111 @@ namespace PharmacyAPI.Controllers
         private readonly PharmacyDbContext dbContext;
         private readonly IMapper mapper;
         private readonly IProductRepository productReppository;
+        private readonly ILogger<ProductsController> logger;
 
-        public ProductsController(PharmacyDbContext dbContext,IMapper mapper,IProductRepository productReppository)
+        public ProductsController(PharmacyDbContext dbContext,IMapper mapper,IProductRepository productReppository,
+            ILogger<ProductsController> logger)
         {
             this.dbContext = dbContext;
             this.mapper = mapper;
             this.productReppository = productReppository;
+            this.logger = logger;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var products = productReppository.GetAll();
-            var productsDto = mapper.Map<List<ProductDto>>(products);
-            return Ok(productsDto);
+            try
+            {
+                var products = productReppository.GetAll();
+                var productsDto = mapper.Map<List<ProductDto>>(products);
+                return Ok(productsDto);
+            }
+            catch (Exception ex) 
+            { 
+                logger.LogError(ex,ex.Message);
+                throw;
+            }
         }
 
         [HttpGet]
         [Route("{id:int}")]
         public IActionResult GetById([FromRoute] int id)
         {
-            var product = productReppository.GetById(id);
-            if (product == null)
+            try
             {
-                return NotFound();
+                var product = productReppository.GetById(id);
+                if (product == null)
+                {
+                    return NotFound();
+                }
+                var productDto = mapper.Map<ProductDto>(product);
+                return Ok(productDto);
             }
-            var productDto = mapper.Map<ProductDto>(product);
-            return Ok(productDto);
+            catch (Exception ex) 
+            {
+                logger.LogError(ex, ex.Message);
+                throw;
+            }
         }
 
         [HttpPost]
         public IActionResult create([FromBody] AddProductDto addProductDto)
-        { 
-            var product = mapper.Map<Product>(addProductDto);
-            productReppository.Create(product);
-            var productDto = mapper.Map<ProductDto>(product);
-            return Ok(productDto);
+        {
+            try
+            {
+                var product = mapper.Map<Product>(addProductDto);
+                productReppository.Create(product);
+                var productDto = mapper.Map<ProductDto>(product);
+                return Ok(productDto);
+            }
+            catch (Exception ex) 
+            {
+                logger.LogError(ex, ex.Message);
+                throw;
+            }
         }
 
         [HttpPut]
         [Route("{id:int}")]
         public IActionResult Update([FromRoute] int id, [FromBody] UpdateProductDto updateProductDto)
         {
-            var product = mapper.Map<Product>(updateProductDto);
-            product = productReppository.Update(id, product);
-            if (product == null)
+            try
             {
-                return NotFound();
+                var product = mapper.Map<Product>(updateProductDto);
+                product = productReppository.Update(id, product);
+                if (product == null)
+                {
+                    return NotFound();
+                }
+                return Ok(mapper.Map<ProductDto>(product));
             }
-            return Ok(mapper.Map<ProductDto>(product));
+            catch (Exception ex) 
+            {
+                logger.LogError(ex, ex.Message);
+                throw;
+            }
         }
 
 
         [HttpDelete]
         [Route("{id:int}")]
         public IActionResult Delete([FromRoute] int id)
-        { 
-            var product = productReppository.Delete(id);
-            if(product == null)
-            {  
-                return NotFound(); 
+        {
+            try
+            {
+                var product = productReppository.Delete(id);
+                if (product == null)
+                {
+                    return NotFound();
+                }
+                return Ok(mapper.Map<ProductDto>(product));
             }
-            return Ok(mapper.Map<ProductDto>(product));
+            catch (Exception ex) 
+            {
+                logger.LogError(ex, ex.Message);
+                throw;
+            }
         }
     }
 }

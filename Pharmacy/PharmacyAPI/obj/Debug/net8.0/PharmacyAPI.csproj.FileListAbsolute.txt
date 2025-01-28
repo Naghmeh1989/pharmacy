@@ -172,3 +172,16 @@ C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\PharmacyAPI
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\ref\PharmacyAPI.dll
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\PharmacyAPI.sourcelink.json
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Sinks.File.dll
