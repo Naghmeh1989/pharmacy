@@ -2,11 +2,11 @@
 
 namespace PharmacyAPI.Repositories
 {
-    public class SQLProductTagRepository : IProductTagRepository
+    public class ProductTagRepository : IProductTagRepository
     {
         private readonly PharmacyDbContext dbContext;
 
-        public SQLProductTagRepository(PharmacyDbContext dbContext)
+        public ProductTagRepository(PharmacyDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

@@ -2,11 +2,11 @@
 
 namespace PharmacyAPI.Repositories
 {
-    public class SQLPriceHistoryRepository : IPriceHistoryRepository
+    public class PriceHistoryRepository : IPriceHistoryRepository
     {
         private readonly PharmacyDbContext dbContext;
 
-        public SQLPriceHistoryRepository(PharmacyDbContext dbContext)
+        public PriceHistoryRepository(PharmacyDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

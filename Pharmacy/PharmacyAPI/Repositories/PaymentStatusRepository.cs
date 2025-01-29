@@ -2,11 +2,11 @@
 
 namespace PharmacyAPI.Repositories
 {
-    public class SQLPaymentStatusRepository : IPaymentStatusRepository
+    public class PaymentStatusRepository : IPaymentStatusRepository
     {
         private readonly PharmacyDbContext dbContext;
 
-        public SQLPaymentStatusRepository(PharmacyDbContext dbContext)
+        public PaymentStatusRepository(PharmacyDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

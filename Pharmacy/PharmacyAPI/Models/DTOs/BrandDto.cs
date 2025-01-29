@@ -12,6 +12,6 @@
 
         public DateOnly? ModifiedDate { get; set; }
 
-        public DateOnly? ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; }
     }
 }

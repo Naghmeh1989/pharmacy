@@ -27,18 +27,18 @@ namespace PharmacyAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery)
         {
             try
             {
-                var products = productReppository.GetAll();
+                var products = productReppository.GetAll(filterOn,filterQuery);
                 var productsDto = mapper.Map<List<ProductDto>>(products);
                 return Ok(productsDto);
             }
             catch (Exception ex) 
             { 
                 logger.LogError(ex,ex.Message);
-                throw;
+                return BadRequest();
             }
         }
 
@@ -59,7 +59,7 @@ namespace PharmacyAPI.Controllers
             catch (Exception ex) 
             {
                 logger.LogError(ex, ex.Message);
-                throw;
+                return BadRequest();
             }
         }
 
@@ -76,7 +76,7 @@ namespace PharmacyAPI.Controllers
             catch (Exception ex) 
             {
                 logger.LogError(ex, ex.Message);
-                throw;
+                return BadRequest();
             }
         }
 
@@ -97,7 +97,7 @@ namespace PharmacyAPI.Controllers
             catch (Exception ex) 
             {
                 logger.LogError(ex, ex.Message);
-                throw;
+                return BadRequest();
             }
         }
 
@@ -118,7 +118,7 @@ namespace PharmacyAPI.Controllers
             catch (Exception ex) 
             {
                 logger.LogError(ex, ex.Message);
-                throw;
+                return BadRequest();
             }
         }
     }

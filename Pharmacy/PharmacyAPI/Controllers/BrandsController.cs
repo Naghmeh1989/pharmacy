@@ -26,7 +26,6 @@ namespace PharmacyAPI.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            throw new Exception("This is a new exception.");
             var brands = brandRepository.GetAll();
             var brandsDto = mapper.Map<List<BrandDto>>(brands);
             return Ok(brandsDto);

@@ -2,17 +2,18 @@
 
 namespace PharmacyAPI.Repositories
 {
-    public class SQLPaymentRepository : IPaymentRepository
+    
+    public class TagRepository : ITagRepository
     {
         private readonly PharmacyDbContext dbContext;
 
-        public SQLPaymentRepository(PharmacyDbContext dbContext)
+        public TagRepository(PharmacyDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-        public List<Payment> GetAll()
+        public List<Tag> GetAll()
         {
-            return dbContext.Payments.ToList();
+            return dbContext.Tags.ToList();
         }
     }
 }

@@ -2,17 +2,17 @@
 
 namespace PharmacyAPI.Repositories
 {
-    public class SQLUserRepository : IUserRepository
+    public class AddressRepository : IAddressRepository
     {
         private readonly PharmacyDbContext dbContext;
 
-        public SQLUserRepository(PharmacyDbContext dbContext)
+        public AddressRepository(PharmacyDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-        public List<User> GetAll()
+        public List<Address> GetAll()
         {
-            return dbContext.Users.ToList();
+            return dbContext.Addresses.ToList();
         }
     }
 }

@@ -1,0 +1,24 @@
+2025-01-29 13:46:44.032 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'PharmacyAPI.Models.PharmacyDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.DateOnly'.
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValueFromSqlBufferInternal[T](SqlBuffer data, _SqlMetaData metaData, Boolean isAsync)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValueInternal[T](Int32 i, Boolean isAsync)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValue[T](Int32 i)
+   at lambda_method57(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.DateOnly'.
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValueFromSqlBufferInternal[T](SqlBuffer data, _SqlMetaData metaData, Boolean isAsync)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValueInternal[T](Int32 i, Boolean isAsync)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValue[T](Int32 i)
+   at lambda_method57(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2025-01-29 13:46:49.638 +00:00 [ERR] Unable to cast object of type 'System.String' to type 'System.DateOnly'.
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.DateOnly'.
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValueFromSqlBufferInternal[T](SqlBuffer data, _SqlMetaData metaData, Boolean isAsync)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValueInternal[T](Int32 i, Boolean isAsync)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetFieldValue[T](Int32 i)
+   at lambda_method57(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PharmacyAPI.Repositories.ProductRepository.GetAll() in C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\Repositories\ProductRepository.cs:line 16
+   at PharmacyAPI.Controllers.ProductsController.GetAll() in C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\Controllers\ProductsController.cs:line 34

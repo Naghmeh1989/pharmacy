@@ -2,11 +2,11 @@
 
 namespace PharmacyAPI.Repositories
 {
-    public class SQLTransactionRepository : ITransactionRepository
+    public class TransactionRepository : ITransactionRepository
     {
         private readonly PharmacyDbContext dbContext;
 
-        public SQLTransactionRepository(PharmacyDbContext dbContext)
+        public TransactionRepository(PharmacyDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

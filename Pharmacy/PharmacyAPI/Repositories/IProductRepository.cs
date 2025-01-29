@@ -4,7 +4,7 @@ namespace PharmacyAPI.Repositories
 {
     public interface IProductRepository
     {
-        List<Product> GetAll();
+        List<Product> GetAll(string? filterOn = null, string? filterQuery = null);
         Product? GetById(int id);
         Product Create(Product product);
         Product? Update(int id,Product product);

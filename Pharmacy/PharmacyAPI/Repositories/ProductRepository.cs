@@ -1,18 +1,27 @@
-﻿using PharmacyAPI.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using PharmacyAPI.Models;
 
 namespace PharmacyAPI.Repositories
 {
-    public class SQLProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly PharmacyDbContext dbContext;
 
-        public SQLProductRepository(PharmacyDbContext dbContext)
+        public ProductRepository(PharmacyDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-        public List<Product> GetAll()
+        public List<Product> GetAll(string? filterOn = null, string? filterQuery = null)
         {
-            return dbContext.Products.ToList();
+            var products = dbContext.Products.Include(x=>x.Category).Include(x=>x.Brand).AsQueryable();
+            if (string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
+            {
+                if (filterOn.Equals("Category", StringComparison.OrdinalIgnoreCase))
+                {
+                    products = products.Where(x => x.Category.Name.Contains(filterQuery));
+                }
+            }
+            return products.ToList();
         }
 
         public Product? GetById(int id)

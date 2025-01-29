@@ -15,7 +15,7 @@ public partial class Brand
 
     public DateOnly? ModifiedDate { get; set; }
 
-    public DateOnly? ModifiedBy { get; set; }
+    public string? ModifiedBy { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

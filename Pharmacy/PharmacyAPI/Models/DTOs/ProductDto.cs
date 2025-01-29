@@ -21,5 +21,7 @@
         public int BrandId { get; set; }
 
         public int CategoryId { get; set; }
+        public BrandDto Brand { get; set; }
+        public CategoryDto Category { get; set; }
     }
 }
