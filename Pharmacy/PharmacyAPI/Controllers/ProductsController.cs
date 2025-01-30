@@ -27,11 +27,12 @@ namespace PharmacyAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery)
+        public IActionResult GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+            [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
             try
             {
-                var products = productReppository.GetAll(filterOn,filterQuery);
+                var products = productReppository.GetAll(filterOn,filterQuery,sortBy,isAscending);
                 var productsDto = mapper.Map<List<ProductDto>>(products);
                 return Ok(productsDto);
             }
