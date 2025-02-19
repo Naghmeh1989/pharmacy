@@ -43,5 +43,39 @@ namespace PharmacyAPI.Controllers
             var categoryDto = mapper.Map<CategoryDto>(category);
             return Ok(categoryDto);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AddCategoryDto addCategoryDto) 
+        { 
+            var category = mapper.Map<Category>(addCategoryDto);
+            categoryRepository.Create(category);
+            var categoryDto = mapper.Map<CategoryDto>(category);
+            return Ok(categoryDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        {
+            var category = categoryRepository.Delete(id);
+            if (category == null) 
+            { 
+                return NotFound();
+            }
+            return Ok(mapper.Map<CategoryDto>(category));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateCategoryDto updateCategoryDto)
+        {
+            var category = mapper.Map<Category>(updateCategoryDto);
+            category = categoryRepository.Update(id, category);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<CategoryDto>(category));
+        }
     }
 }

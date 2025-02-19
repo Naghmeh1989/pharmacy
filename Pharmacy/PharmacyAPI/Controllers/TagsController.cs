@@ -44,5 +44,39 @@ namespace PharmacyAPI.Controllers
             var tagDto = mapper.Map<TagDto>(tag);
             return Ok(tagDto);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AddTagDto addTagDto)
+        { 
+            var tag = mapper.Map<Tag>(addTagDto);
+            tagRepository.Create(tag);
+            var tagDto = mapper.Map<TagDto>(tag);
+            return Ok(tagDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        { 
+            var tag = tagRepository.Delete(id);
+            if(tag == null)
+            {  
+                return NotFound(); 
+            }
+            return Ok(mapper.Map<TagDto>(tag));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateTagDto updateTagDto)
+        {
+            var tag = mapper.Map<Tag>(updateTagDto);
+            tag = tagRepository.Update(id, tag);
+            if (tag == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<TagDto>(tag));
+        }
     }
 }

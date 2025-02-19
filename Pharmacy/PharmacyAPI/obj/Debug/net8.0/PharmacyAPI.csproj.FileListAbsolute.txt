@@ -163,7 +163,6 @@ C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\staticwebas
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PharmacyAPI.props
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PharmacyAPI.props
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\Pharmacy.0D494FCE.Up2Date
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\PharmacyAPI.dll
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\refint\PharmacyAPI.dll
@@ -185,3 +184,4 @@ C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Set
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\44757\PharmacyProject\Pharmacy\PharmacyAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -44,5 +44,39 @@ namespace PharmacyAPI.Controllers
             return Ok(orderDto);
         }
 
+        [HttpPost]
+        public IActionResult Create([FromBody] AddOrderDto addOrderDto) 
+        { 
+            var order = mapper.Map<Order>(addOrderDto);
+            orderRepository.Create(order);
+            var orderDto = mapper.Map<OrderDto>(order);
+            return Ok(orderDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        {
+            var order = orderRepository.Delete(id);
+            if (order == null) 
+            { 
+                return NotFound();
+            }
+            return Ok(mapper.Map<OrderDto>(order));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateOrderDto updateOrderDto)
+        {
+            var order = mapper.Map<Order>(updateOrderDto);
+            order = orderRepository.Update(id, order);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<OrderDto>(order));
+        }
+
     }
 }

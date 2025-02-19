@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using PharmacyAPI.Models;
 using PharmacyAPI.Models.DTOs;
 using PharmacyAPI.Repositories;
-using System.Transactions;
+
+
 
 namespace PharmacyAPI.Controllers
 {
@@ -42,6 +43,40 @@ namespace PharmacyAPI.Controllers
             }
             var transactionDto = mapper.Map<TransactionDto>(transaction);
             return Ok(transactionDto);
+        }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AddTransactionDto addTransactionDto)
+        { 
+            var transaction = mapper.Map<Transaction>(addTransactionDto);
+            transactionRepository.Create(transaction);
+            var transactionDto = mapper.Map<TransactionDto>(transaction);
+            return Ok(transactionDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        {
+            var transaction = transactionRepository.Delete(id);
+            if(transaction == null)
+            { 
+                return NotFound();
+            }
+            return Ok(mapper.Map<TransactionDto>(transaction));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateTransactionDto updateTransactionDto)
+        {
+            var transaction = mapper.Map<Transaction>(updateTransactionDto);
+            transaction = transactionRepository.Update(id, transaction);
+            if (transaction == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<TransactionDto>(transaction));
         }
     }
 }

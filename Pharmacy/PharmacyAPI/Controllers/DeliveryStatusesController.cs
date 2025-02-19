@@ -43,5 +43,39 @@ namespace PharmacyAPI.Controllers
             var deliveryStatusDto = mapper.Map<DeliveryStatusDto>(deliveryStatus);
             return Ok(deliveryStatusDto);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AddDeliveryStatusDto addDeliveryStatusDto) 
+        { 
+            var deliveryStatus = mapper.Map<DeliveryStatus>(addDeliveryStatusDto);
+            deliveryStatusRepository.Create(deliveryStatus);
+            var deliveryStatusDto = mapper.Map<DeliveryStatusDto>(deliveryStatus);
+            return Ok(deliveryStatusDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        { 
+            var deliveryStatus = deliveryStatusRepository.Delete(id);
+            if(deliveryStatus == null)
+            {  
+                return NotFound();
+            }
+            return Ok(mapper.Map<DeliveryStatusDto>(deliveryStatus));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateDeliveryStatusDto updateDeliveryStatusDto)
+        {
+            var deliveryStatus = mapper.Map<DeliveryStatus>(updateDeliveryStatusDto);
+            deliveryStatus = deliveryStatusRepository.Update(id, deliveryStatus);
+            if (deliveryStatus == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<DeliveryStatusDto>(deliveryStatus));
+        }
     }
 }

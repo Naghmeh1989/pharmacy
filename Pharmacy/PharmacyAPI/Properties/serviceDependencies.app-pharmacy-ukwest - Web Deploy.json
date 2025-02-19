@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('serviceConnectorResourceGroupName')]/providers/Microsoft.Web/sites/app-pharmacy-ukwest/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsPharmacyConnectionStrin_F77B315BB1",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/sqlserver-pharmacy-ukwest/databases/sqldb-pharmacy-ukwest",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:PharmacyConnectionString1",
+      "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('serviceConnectorResourceGroupName')]/providers/Microsoft.Web/sites/app-pharmacy-ukwest/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsPharmacyConnectionStrin_00AD255ACC",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/sqlserver-pharmacy-ukwest/databases/sqldb-pharmacy-ukwest",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:PharmacyConnectionString2",
+      "dynamicId": null
+    },
+    "mssql3": {
+      "secretStore": "AzureAppSettings",
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:PharmacyConnectionString3",
+      "dynamicId": null
+    },
+    "mssql4": {
+      "secretStore": "AzureAppSettings",
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:PharmacyConnectionString4",
+      "dynamicId": null
+    }
+  }
+}

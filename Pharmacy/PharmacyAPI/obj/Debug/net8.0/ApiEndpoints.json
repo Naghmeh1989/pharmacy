@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "PharmacyAPI.Controllers.AddressesController",
+    "Method": "Create",
+    "RelativePath": "api/Addresses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addAddressDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddAddressDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.AddressesController",
     "Method": "GetById",
     "RelativePath": "api/Addresses/{id}",
     "HttpMethod": "GET",
@@ -26,6 +42,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.AddressesController",
+    "Method": "Delete",
+    "RelativePath": "api/Addresses/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.AddressesController",
+    "Method": "Update",
+    "RelativePath": "api/Addresses/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateAddressDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateAddressDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.BrandsController",
     "Method": "GetAll",
     "RelativePath": "api/Brands",
@@ -33,6 +86,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.BrandsController",
+    "Method": "Create",
+    "RelativePath": "api/Brands",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addBrandDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddBrandDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -52,6 +121,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.BrandsController",
+    "Method": "Delete",
+    "RelativePath": "api/Brands/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.BrandsController",
+    "Method": "Update",
+    "RelativePath": "api/Brands/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateBrandDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateBrandDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.CategoriesController",
     "Method": "GetAll",
     "RelativePath": "api/Categories",
@@ -59,6 +165,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.CategoriesController",
+    "Method": "Create",
+    "RelativePath": "api/Categories",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addCategoryDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddCategoryDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -78,6 +200,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.CategoriesController",
+    "Method": "Delete",
+    "RelativePath": "api/Categories/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.CategoriesController",
+    "Method": "Update",
+    "RelativePath": "api/Categories/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateCategoryDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateCategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.DeliveryStatusesController",
     "Method": "GetAll",
     "RelativePath": "api/DeliveryStatuses",
@@ -85,6 +244,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.DeliveryStatusesController",
+    "Method": "Create",
+    "RelativePath": "api/DeliveryStatuses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addDeliveryStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddDeliveryStatusDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -104,6 +279,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.DeliveryStatusesController",
+    "Method": "Delete",
+    "RelativePath": "api/DeliveryStatuses/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.DeliveryStatusesController",
+    "Method": "Update",
+    "RelativePath": "api/DeliveryStatuses/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateDeliveryStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateDeliveryStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.OrderDetailsController",
     "Method": "GetAll",
     "RelativePath": "api/OrderDetails",
@@ -111,6 +323,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.OrderDetailsController",
+    "Method": "Create",
+    "RelativePath": "api/OrderDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addOrderDetailsDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddOrderDetailsDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -130,6 +358,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.OrderDetailsController",
+    "Method": "Delete",
+    "RelativePath": "api/OrderDetails/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.OrderDetailsController",
+    "Method": "Update",
+    "RelativePath": "api/OrderDetails/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateOrderDetailsDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateOrderDetailsDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.OrdersController",
     "Method": "GetAll",
     "RelativePath": "api/Orders",
@@ -137,6 +402,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.OrdersController",
+    "Method": "Create",
+    "RelativePath": "api/Orders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addOrderDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddOrderDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -156,6 +437,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.OrdersController",
+    "Method": "Delete",
+    "RelativePath": "api/Orders/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.OrdersController",
+    "Method": "Update",
+    "RelativePath": "api/Orders/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateOrderDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateOrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.OrderStatusesController",
     "Method": "GetAll",
     "RelativePath": "api/OrderStatuses",
@@ -163,6 +481,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.OrderStatusesController",
+    "Method": "Create",
+    "RelativePath": "api/OrderStatuses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addOrderStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddOrderStatusDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -182,6 +516,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.OrderStatusesController",
+    "Method": "Delete",
+    "RelativePath": "api/OrderStatuses/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.OrderStatusesController",
+    "Method": "Update",
+    "RelativePath": "api/OrderStatuses/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateOrderStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateOrderStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.PaymentsController",
     "Method": "GetAll",
     "RelativePath": "api/Payments",
@@ -189,6 +560,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.PaymentsController",
+    "Method": "Create",
+    "RelativePath": "api/Payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addPaymentDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddPaymentDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -208,6 +595,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.PaymentsController",
+    "Method": "Delete",
+    "RelativePath": "api/Payments/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.PaymentsController",
+    "Method": "Update",
+    "RelativePath": "api/Payments/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatePaymentDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdatePaymentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.PaymentStatusesController",
     "Method": "GetAll",
     "RelativePath": "api/PaymentStatuses",
@@ -215,6 +639,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.PaymentStatusesController",
+    "Method": "Create",
+    "RelativePath": "api/PaymentStatuses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addPaymentStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddPaymentStatusDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -234,6 +674,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.PaymentStatusesController",
+    "Method": "Delete",
+    "RelativePath": "api/PaymentStatuses/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.PaymentStatusesController",
+    "Method": "Update",
+    "RelativePath": "api/PaymentStatuses/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatePaymentStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdatePaymentStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.PriceHistoriesController",
     "Method": "GetAll",
     "RelativePath": "api/PriceHistories",
@@ -241,6 +718,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.PriceHistoriesController",
+    "Method": "Create",
+    "RelativePath": "api/PriceHistories",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addPriceHistoryDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddPriceHistoryDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -254,6 +747,43 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.PriceHistoriesController",
+    "Method": "Delete",
+    "RelativePath": "api/PriceHistories/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.PriceHistoriesController",
+    "Method": "Update",
+    "RelativePath": "api/PriceHistories/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatePriceHistoryDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdatePriceHistoryDto",
         "IsRequired": true
       }
     ],
@@ -381,6 +911,22 @@
   },
   {
     "ContainingType": "PharmacyAPI.Controllers.TagsController",
+    "Method": "Create",
+    "RelativePath": "api/Tags",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addTagDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddTagDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.TagsController",
     "Method": "GetById",
     "RelativePath": "api/Tags/{id}",
     "HttpMethod": "GET",
@@ -396,6 +942,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.TagsController",
+    "Method": "Delete",
+    "RelativePath": "api/Tags/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.TagsController",
+    "Method": "Update",
+    "RelativePath": "api/Tags/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateTagDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateTagDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.TransactionsController",
     "Method": "GetAll",
     "RelativePath": "api/Transactions",
@@ -403,6 +986,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.TransactionsController",
+    "Method": "Create",
+    "RelativePath": "api/Transactions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addTransactionDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddTransactionDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -422,6 +1021,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.TransactionsController",
+    "Method": "Delete",
+    "RelativePath": "api/Transactions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.TransactionsController",
+    "Method": "Update",
+    "RelativePath": "api/Transactions/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateTransactionDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateTransactionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.TransactionStatusesController",
     "Method": "GetAll",
     "RelativePath": "api/TransactionStatuses",
@@ -429,6 +1065,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.TransactionStatusesController",
+    "Method": "Create",
+    "RelativePath": "api/TransactionStatuses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addTransactionStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddTransactionStatusDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -448,6 +1100,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PharmacyAPI.Controllers.TransactionStatusesController",
+    "Method": "Delete",
+    "RelativePath": "api/TransactionStatuses/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.TransactionStatusesController",
+    "Method": "Update",
+    "RelativePath": "api/TransactionStatuses/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateTransactionStatusDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateTransactionStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PharmacyAPI.Controllers.UsersController",
     "Method": "GetAll",
     "RelativePath": "api/Users",
@@ -455,6 +1144,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.UsersController",
+    "Method": "Create",
+    "RelativePath": "api/Users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addUserDto",
+        "Type": "PharmacyAPI.Models.DTOs.AddUserDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -474,24 +1179,40 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PharmacyAPI.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "PharmacyAPI.Controllers.UsersController",
+    "Method": "Delete",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[PharmacyAPI.WeatherForecast, PharmacyAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PharmacyAPI.Controllers.UsersController",
+    "Method": "Update",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateUserDto",
+        "Type": "PharmacyAPI.Models.DTOs.UpdateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

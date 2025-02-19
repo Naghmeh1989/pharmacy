@@ -19,12 +19,16 @@ namespace PharmacyAPI.Repositories
             {
                 if (filterOn.Equals("Category", StringComparison.OrdinalIgnoreCase))
                 {
-                   products = products.Where(x => x.Category.Name.Contains(filterQuery));
+
+
+                    products = products.Where(x => x.Category.Name.Contains(filterQuery));
+                       // .Where(x => x.Price.Contains(filterQuery));
+                    
                 }
-                else if (filterOn.Equals("Price", StringComparison.OrdinalIgnoreCase))
-                {
-                    products = products.Where(x => x.Price.Contains(filterQuery));
-                }
+               // else if (filterOn.Equals("Price", StringComparison.OrdinalIgnoreCase))
+               // {
+                    //products = products.Where(x => x.Price.Contains(filterQuery));
+                //}
                 else if (filterOn.Equals("Brand", StringComparison.OrdinalIgnoreCase))
                 {
                     products = products.Where(x => x.Brand.Name.Contains(filterQuery));

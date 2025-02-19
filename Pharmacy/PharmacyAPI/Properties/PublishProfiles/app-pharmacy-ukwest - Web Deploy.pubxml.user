@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <History>True|2025-02-11T17:05:23.3151026Z||;True|2025-02-11T16:29:45.6741834+00:00||;True|2025-02-11T16:07:44.1699943+00:00||;False|2025-02-11T15:11:21.7497079+00:00||;False|2025-02-11T15:04:18.2581010+00:00||;False|2025-02-11T15:02:46.7816614+00:00||;False|2025-02-11T14:26:56.5440201+00:00||;False|2025-02-11T13:47:21.6372741+00:00||;False|2025-02-04T18:38:15.4152913+00:00||;False|2025-02-04T18:29:58.0867172+00:00||;False|2025-02-04T18:20:40.6022113+00:00||;False|2025-02-04T18:14:20.6064011+00:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="PharmacyConnectionString">
+      <Value>Server=tcp:sqlserver-pharmacy-ukwest.database.windows.net,1433%3bInitial Catalog=sqldb-pharmacy-ukwest%3bPersist Security Info=False%3bUser ID=pharmacyadmin%3bPassword=Maryam133812%40%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="PharmacyAPI.Models.PharmacyDbContext">
+      <Value>Server=tcp:sqlserver-pharmacy-ukwest.database.windows.net,1433%3bInitial Catalog=sqldb-pharmacy-ukwest%3bPersist Security Info=False%3bUser ID=pharmacyadmin%3bPassword=Maryam133812%40%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

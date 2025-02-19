@@ -43,5 +43,39 @@ namespace PharmacyAPI.Controllers
             var priceHistoryDto = mapper.Map<PriceHistoryDto>(priceHistory);
             return Ok(priceHistoryDto);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AddPriceHistoryDto addPriceHistoryDto) 
+        {
+            var priceHistory = mapper.Map<PriceHistory>(addPriceHistoryDto);
+            priceHistoryRepository.Create(priceHistory);
+            var priceHistoryDto = mapper.Map<PriceHistoryDto> (priceHistory);
+            return Ok(priceHistoryDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        {
+            var priceHistory = priceHistoryRepository.Delete(id);
+            if(priceHistory == null)
+            { 
+                return NotFound();
+            }
+            return Ok(mapper.Map<PriceHistoryDto>(priceHistory));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdatePriceHistoryDto updatePriceHistoryDto)
+        {
+            var priceHistory = mapper.Map<PriceHistory>(updatePriceHistoryDto);
+            priceHistory = priceHistoryRepository.Update(id, priceHistory);
+            if (priceHistory == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<PriceHistoryDto>(priceHistory));
+        }
     }
 }

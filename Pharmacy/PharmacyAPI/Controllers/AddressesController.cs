@@ -43,5 +43,39 @@ namespace PharmacyAPI.Controllers
             var addressDto = mapper.Map<AddressDto>(address);
             return Ok(addressDto);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AddAddressDto addAddressDto) 
+        { 
+            var address = mapper.Map<Address>(addAddressDto);
+            addressRepository.Create(address);
+            var addressDto = mapper.Map<AddressDto>(address);
+            return Ok(addressDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        {
+            var address = addressRepository.Delete(id);
+            if(address == null)
+            {  
+                return NotFound();
+            }
+            return Ok(mapper.Map<AddressDto>(address));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateAddressDto updateAddressDto)
+        {
+            var address = mapper.Map<Address>(updateAddressDto);
+            address = addressRepository.Update(id, address);
+            if (address == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<AddressDto>(address));
+        }
     }
 }

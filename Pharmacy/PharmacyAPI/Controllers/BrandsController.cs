@@ -43,5 +43,39 @@ namespace PharmacyAPI.Controllers
             var brandDto = mapper.Map<BrandDto>(brand);
             return Ok(brandDto);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AddBrandDto addBrandDto) 
+        { 
+            var brand = mapper.Map<Brand>(addBrandDto);
+            brandRepository.Create(brand);
+            var brandDto = mapper.Map<BrandDto>(brand);
+            return Ok(brandDto);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IActionResult Delete([FromRoute] int id) 
+        { 
+            var brand = brandRepository.Delete(id);
+            if(brand == null)
+            {  
+                return NotFound();
+            }
+            return Ok(mapper.Map<BrandDto>(brand));
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateBrandDto updateBrandDto)
+        {
+            var brand = mapper.Map<Brand>(updateBrandDto);
+            brand = brandRepository.Update(id, brand);
+            if (brand == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<BrandDto>(brand));
+        }
     }
 }
