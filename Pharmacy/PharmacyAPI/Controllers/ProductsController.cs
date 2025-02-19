@@ -65,7 +65,7 @@ namespace PharmacyAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult create([FromBody] AddProductDto addProductDto)
+        public IActionResult Create([FromBody] AddProductDto addProductDto)
         {
             try
             {

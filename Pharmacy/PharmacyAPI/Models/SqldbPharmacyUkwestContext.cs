@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PharmacyAPI.Models;
 
-public partial class PharmacyDbContext : DbContext
+public partial class SqldbPharmacyUkwestContext : DbContext
 {
-    public PharmacyDbContext()
+    public SqldbPharmacyUkwestContext()
     {
     }
 
-    public PharmacyDbContext(DbContextOptions<PharmacyDbContext> options)
+    public SqldbPharmacyUkwestContext(DbContextOptions<SqldbPharmacyUkwestContext> options)
         : base(options)
     {
     }
@@ -49,7 +49,7 @@ public partial class PharmacyDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=localhost;Database=PharmacyDb;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=tcp:sqlserver-pharmacy-ukwest.database.windows.net,1433;Initial Catalog=sqldb-pharmacy-ukwest;Persist Security Info=False;User ID=pharmacyadmin;Password=Maryam133812@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -212,8 +212,6 @@ public partial class PharmacyDbContext : DbContext
         modelBuilder.Entity<OrderDetails>(entity =>
         {
             entity.ToTable("orderDetails");
-
-            entity.HasIndex(e => e.Id, "IX_orderDetails");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedBy)

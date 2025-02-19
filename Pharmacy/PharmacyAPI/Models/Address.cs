@@ -28,4 +28,8 @@ public partial class Address
     public DateTime? ModifiedDate { get; set; }
 
     public string? ModifiedBy { get; set; }
+
+    public int UserId { get; set; }
+
+    public virtual User User { get; set; } = null!;
 }

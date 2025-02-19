@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace PharmacyAPI.Models;
 
 public partial class OrderDetails
@@ -32,6 +33,7 @@ public partial class OrderDetails
     public virtual DeliveryStatus DeliveryStatus { get; set; } = null!;
 
     public virtual Order Order { get; set; } = null!;
+    public virtual Payment Payment { get; set; } = null!;
 
     public virtual Product Product { get; set; } = null!;
 }

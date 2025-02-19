@@ -24,4 +24,6 @@ public partial class User
     public DateTime ModifiedDate { get; set; }
 
     public string ModifiedBy { get; set; } = null!;
+
+    public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
 }

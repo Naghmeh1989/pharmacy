@@ -822,7 +822,7 @@
   },
   {
     "ContainingType": "PharmacyAPI.Controllers.ProductsController",
-    "Method": "create",
+    "Method": "Create",
     "RelativePath": "api/Products",
     "HttpMethod": "POST",
     "IsController": true,

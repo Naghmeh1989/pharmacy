@@ -23,5 +23,6 @@
         public DateTime? ModifiedDate { get; set; }
 
         public string? ModifiedBy { get; set; }
+        public int UserId { get; set; }
     }
 }

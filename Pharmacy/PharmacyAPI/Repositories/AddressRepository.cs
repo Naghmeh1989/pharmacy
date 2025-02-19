@@ -58,6 +58,7 @@ namespace PharmacyAPI.Repositories
             existingAddress.HouseNumber = address.HouseNumber;
             existingAddress.StreetName = address.StreetName;    
             existingAddress.PostCode = address.PostCode;
+            existingAddress.UserId = address.UserId;
             dbContext.SaveChanges();
             return existingAddress;
         }
